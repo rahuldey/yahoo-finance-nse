@@ -62,8 +62,7 @@ def main():
             raise ValueError('Incorrect config file')
         report_types.append(list(report_type.keys())[0])
 
-    # companies_list = pd.read_excel('./NSE.xlsx').SYMBOL.tolist()
-    companies_list = ['20MICRONS', '21STCENMGM', '3IINFOTECH']
+    companies_list = pd.read_excel('./NSE.xlsx').SYMBOL.tolist()
     
     for company in companies_list:
         for report_type in report_types:
@@ -75,7 +74,7 @@ def main():
             for x in controller.scraped_results():
                 results.append(x)
             time.sleep(1)
-            
+
     print(json.dumps(results))
 
 main()
